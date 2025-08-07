@@ -2,6 +2,7 @@
 import { useAppContext } from "@/context/AppContext"
 import { useEffect } from "react"
 import Image from "next/image"
+import { assets } from "@/assets/assets"
 
 const OrderPlaced = () => {
   const { router } = useAppContext()
