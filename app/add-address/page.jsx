@@ -1,11 +1,10 @@
-"use client";
 
 import { assets } from require("@/assets/assets");
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Image from "next/image";
 import AllProducts from "../shop/page";
-const { useState } = require("react");
+import { useState } from "react";
 
 const AddAddress = () => {
   const [address, setAddress] = useState({
