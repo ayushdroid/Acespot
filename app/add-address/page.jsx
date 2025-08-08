@@ -1,12 +1,17 @@
 'use client'
+import axios from "axios";
 import { assets } from "@/assets/assets";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Image from "next/image";
-import AllProducts from "../shop/page";
 import { useState } from "react";
+import { useAppContext } from "@/context/AppContext";
+import toast from "react-hot-toast";
 
 const AddAddress = () => {
+
+  const { getToken, router } = useAppContext();
+
   const [address, setAddress] = useState({
     fullName: "",
     phoneNumber: "",
@@ -18,6 +23,22 @@ const AddAddress = () => {
 
   const onSubmitHandler = async (e) => {
     e.preventDefault();
+    try {
+      
+      const token = await getToken()
+    
+      const { data } = await axios.post('/api/user/add-address', {address}, {headers:{Authorization: `Bearer ${token}`}})
+
+      if (data.success) {
+        toast.success(data.message)
+        router.push('/cart')
+      } else {
+        toast.error(data.message)
+      }
+
+    } catch (error) {
+      toast.error(error.message)
+    }
   };
 
   return (
@@ -88,7 +109,7 @@ const AddAddress = () => {
               />
             </div>
           </div>
-          <button className="max-w-sm w-full mt-6 bg-blue-950 text-white py-3 hover:bg-orange-700 uppercase">
+          <button className="max-w-sm w-full mt-6 bg-blue-950 text-white py-3 hover:bg-blue-900 uppercase">
             Save Address
           </button>
         </form>
@@ -103,4 +124,4 @@ const AddAddress = () => {
   );
 };
 
-export default AllProducts;
+export default AddAddress;
