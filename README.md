@@ -2,10 +2,10 @@
 
 > A futuristic **E-Commerce platform** for electronics where **sellers** and **buyers** seamlessly connect to buy & sell electronics.  
 
-![Stars](https://img.shields.io/github/stars/YourUsername/Acespot?style=for-the-badge&logo=github&color=0f9d58)  
-![Forks](https://img.shields.io/github/forks/YourUsername/Acespot?style=for-the-badge&logo=git&color=4285f4)  
-![Issues](https://img.shields.io/github/issues/YourUsername/Acespot?style=for-the-badge&logo=github&color=ff5722)  
-![License](https://img.shields.io/github/license/YourUsername/Acespot?style=for-the-badge&color=9c27b0)  
+![Stars](https://img.shields.io/github/stars/ayushdroid/Acespot?style=for-the-badge&logo=github&color=0f9d58)  
+![Forks](https://img.shields.io/github/forks/ayushdroid/Acespot?style=for-the-badge&logo=git&color=4285f4)  
+![Issues](https://img.shields.io/github/issues/ayushdroid/Acespot?style=for-the-badge&logo=github&color=ff5722)  
+![License](https://img.shields.io/github/license/ayushdroid/Acespot?style=for-the-badge&color=9c27b0)  
 ![Next.js](https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white)  
 ![Vercel](https://img.shields.io/badge/Hosted%20on-Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)  
 
@@ -37,3 +37,24 @@ Acespot/
  ├── lib/           # Database & API helpers
  ├── public/        # Static assets
  └── docs/          # Documentation
+
+```
+
+---
+
+## 🛰️ Start Development Server
+
+Spin up the **Acespot dev server** with your favorite package manager ⚡
+
+```bash
+# Using npm
+npm run dev
+
+# Using yarn
+yarn dev
+
+# Using pnpm
+pnpm dev
+
+# Using bun
+bun dev
