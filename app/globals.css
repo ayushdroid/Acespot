@@ -15,3 +15,42 @@
 ::-webkit-scrollbar {
   display: none;
 }
+
+/* --- global theme & components --- */
+@layer base {
+  /* Base page background & text for light theme */
+  body {
+    @apply bg-white text-gray-700 transition-colors duration-300;
+  }
+
+  /* When .dark class is applied to <html>, override body */
+  .dark body {
+    @apply bg-gray-900 text-gray-100;
+  }
+}
+
+/* Primary button + other component styles */
+@layer components {
+  /* Use this class for primary buttons throughout app */
+  .btn-primary {
+    @apply bg-blue-950 text-white px-4 py-2 rounded-md font-semibold transition-colors duration-150;
+  }
+
+  .btn-primary:hover {
+    @apply opacity-95;
+  }
+
+  /* Dark theme variant override (activated by .dark on <html>) */
+  .dark .btn-primary {
+    @apply bg-blue-600 text-white;
+  }
+
+  /* Example small utility for nav background consistency */
+  .site-nav {
+    @apply bg-white text-gray-700 border-b border-gray-300 transition-colors duration-300;
+  }
+
+  .dark .site-nav {
+    @apply bg-gray-900 text-gray-100 border-b border-gray-700;
+  }
+}
