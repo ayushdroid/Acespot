@@ -1,36 +1,60 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# ⚡ Acespot  
 
-## Getting Started
+> A futuristic **E-Commerce platform** for electronics where **sellers** and **buyers** seamlessly connect to buy & sell electronics.  
 
-First, run the development server:
+![Stars](https://img.shields.io/github/stars/ayushdroid/Acespot?style=for-the-badge&logo=github&color=0f9d58)  
+![Forks](https://img.shields.io/github/forks/ayushdroid/Acespot?style=for-the-badge&logo=git&color=4285f4)  
+![Issues](https://img.shields.io/github/issues/ayushdroid/Acespot?style=for-the-badge&logo=github&color=ff5722)  
+![License](https://img.shields.io/github/license/ayushdroid/Acespot?style=for-the-badge&color=9c27b0)  
+![Next.js](https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white)  
+![Vercel](https://img.shields.io/badge/Hosted%20on-Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)  
 
+---
+
+## 🌌 Features
+- 🔌 **Buy & Sell Electronics** easily  
+- 🛒 Smooth & modern **shopping experience**  
+- 📦 **Secure orders & delivery tracking**  
+- 💳 Integrated **payment gateway**  
+- 📊 Seller **dashboard & analytics**  
+
+---
+
+## 🚀 Tech Stack
+- **Framework:** [Next.js](https://nextjs.org/)  
+- **Styling:** Tailwind CSS  
+- **Database:** MongoDB  
+- **Hosting:** [Vercel](https://vercel.com/)  
+
+---
+
+## 📂 Project Structure
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+Acespot/
+ ├── pages/         # Next.js pages & routes
+ ├── components/    # Reusable UI components
+ ├── styles/        # Tailwind CSS styles
+ ├── lib/           # Database & API helpers
+ ├── public/        # Static assets
+ └── docs/          # Documentation
+
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## 🛰️ Start Development Server
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Spin up the **Acespot dev server** with your favorite package manager ⚡
 
-## Learn More
+```bash
+# Using npm
+npm run dev
 
-To learn more about Next.js, take a look at the following resources:
+# Using yarn
+yarn dev
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+# Using pnpm
+pnpm dev
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+# Using bun
+bun dev
