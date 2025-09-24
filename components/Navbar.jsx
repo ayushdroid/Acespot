@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { assets, BagIcon, BoxIcon, CartIcon, HomeIcon } from "@/assets/assets";
 import Link from "next/link";
 import Image from "next/image";
@@ -10,6 +10,38 @@ import { useClerk, UserButton } from "@clerk/nextjs";
 const Navbar = () => {
   const { isSeller, router, user } = useAppContext();
   const { openSignIn } = useClerk();
+
+  const [theme, setTheme] = useState("light");
+
+    useEffect(() => {
+    // Read saved theme (if any) or detect system preference
+    try {
+      const saved = localStorage.getItem("theme");
+      if (saved) {
+        setTheme(saved);
+        document.documentElement.classList.toggle("dark", saved === "dark");
+      } else {
+        const prefersDark =
+          window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+        const initial = prefersDark ? "dark" : "light";
+        setTheme(initial);
+        document.documentElement.classList.toggle("dark", initial === "dark");
+      }
+    } catch (e) {
+      console.warn("could not read theme", e);
+    }
+  }, []);
+
+    const toggleTheme = () => {
+    const newTheme = theme === "light" ? "dark" : "light";
+    setTheme(newTheme);
+    try {
+      localStorage.setItem("theme", newTheme);
+    } catch (e) {
+      // ignore
+    }
+    document.documentElement.classList.toggle("dark", newTheme === "dark");
+  };
 
   return (
     <nav className="flex items-center justify-between px-6 md:px-16 lg:px-32 py-3 border-b border-gray-300 text-gray-700 h-16">
@@ -43,6 +75,14 @@ const Navbar = () => {
       </div>
       <ul className="hidden md:flex items-center gap-4">
         <Image className="w-4 h-4" src={assets.search_icon} alt="search icon" />
+        <button
+          onClick={toggleTheme}
+          aria-label="Toggle theme"
+          title="Toggle theme"
+          className="p-2 rounded-full border hover:bg-gray-200 dark:hover:bg-gray-700 transition"
+        >
+          {theme === "light" ? "🌙" : "☀️"}
+        </button>
         {user ? 
           <>
             <UserButton>
@@ -73,6 +113,14 @@ const Navbar = () => {
             Seller Dashboard
           </button>
         )}
+        <button
+          onClick={toggleTheme}
+          aria-label="Toggle theme"
+          title="Toggle theme"
+          className="p-2 rounded-full border hover:bg-gray-200 dark:hover:bg-gray-700 transition"
+        >
+          {theme === "light" ? "🌙" : "☀️"}
+        </button>
         {user ? 
           <>
             <UserButton>
