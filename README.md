@@ -37,3 +37,24 @@ Acespot/
  ├── lib/           # Database & API helpers
  ├── public/        # Static assets
  └── docs/          # Documentation
+
+```
+
+---
+
+## 🛰️ Start Development Server
+
+Spin up the **Acespot dev server** with your favorite package manager ⚡
+
+```bash
+# Using npm
+npm run dev
+
+# Using yarn
+yarn dev
+
+# Using pnpm
+pnpm dev
+
+# Using bun
+bun dev
